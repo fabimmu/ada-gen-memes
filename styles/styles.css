@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap");
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+button::selection {
+  outline: 0;
+  background-color: transparent;
+}
+header {
+  color: white;
+  background-color: #c2185b;
+
+  text-align: center;
+  padding: 15px;
+}
+h1 {
+  margin-bottom: 10px;
+}
+.btn-option {
+  font-weight: 100;
+  color: white;
+  background-color: #c2185b;
+  border: none;
+  cursor: pointer;
+}
+.btn-option .fas,
+.far {
+  color: white;
+}
+body {
+  background-color: #e91e63;
+}
+.section-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.gen-box {
+  margin: 20px;
+}
+#top-text,
+#bottom-text {
+  background-color: white;
+  font-size: 40px;
+  font-weight: 400;
+  text-align: center;
+  padding: 35px 50px;
+  cursor: text;
+}
+#meme-url {
+  width: 100%;
+  max-width: 500px;
+  height: 500px;
+  background-color: black;
+  position: relative;
+}
+.btn-download {
+  font-weight: 100;
+  color: white;
+  background-color: #4caf50;
+  border: none;
+  border-radius: 5px;
+  padding: 15px;
+  cursor: pointer;
+}
