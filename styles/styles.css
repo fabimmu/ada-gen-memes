@@ -36,6 +36,11 @@ h1 {
 }
 body {
   background-color: #e91e63;
+
+  display: flex;
+}
+main {
+  width: 75%;
 }
 .section-main {
   display: flex;
@@ -58,7 +63,8 @@ body {
 #meme-url {
   width: 100%;
   max-width: 500px;
-  height: 500px;
+  max-height: 500px;
+  height: 300px;
   background-color: black;
   position: relative;
 }
@@ -73,4 +79,10 @@ body {
 }
 .btn-download:hover {
   background-color: #347a37ec;
+}
+.sidebar {
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+  width: 25%;
 }
