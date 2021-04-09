@@ -15,6 +15,7 @@ header {
   padding: 15px;
 }
 h1 {
+  text-align: center;
   margin-bottom: 10px;
 }
 .btn-option {
@@ -81,8 +82,34 @@ main {
   background-color: #347a37ec;
 }
 .sidebar {
+  color: white;
+  background-color: #d81b60;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
   padding: 5px;
   width: 25%;
+}
+.close-panel {
+  background-color: #d81b60;
+  border: none;
+  font-size: 2em;
+  text-align: left;
+
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.img-configs {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: flex-start;
+  width: 100%;
+  padding: 5px;
+}
+input:url {
 }
