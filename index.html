@@ -13,47 +13,289 @@
       crossorigin="anonymous"
     ></script>
   </head>
-  <body>
-    <main>
-      <header>
-        <h1>Generador de Memes</h1>
-        <div>
-          <button class="btn-option" onclick="openSideBar()">
-            <i class="fas fa-file-image"></i> Imagen
-          </button>
-          <button class="btn-option"><i class="fas fa-font"></i> Texto</button>
-          <button class="btn-option">
-            <i class="far fa-lightbulb"></i> Modo oscuro
-          </button>
-        </div>
-      </header>
-      <!--GENERADOR-->
-      <section class="section-main">
-        <div class="gen-box">
-          <p id="top-text">TOP TEXT</p>
-          <div src="" id="meme-url"></div>
-          <p id="bottom-text">BOTTOM TEXT</p>
-        </div>
-        <!--DOWNLOAD BOTTOM-->
-        <button class="btn-download" type="button">
-          <i class="fas fa-download"></i> Descargar meme
+  <body class="light">
+    <header>
+      <h1>Generador de Memes</h1>
+      <div>
+        <button class="btn-option" id="b-img">
+          <i class="fas fa-file-image"></i> Imagen
         </button>
-      </section>
+        <button id="b-txt" class="btn-option">
+          <i class="fas fa-font"></i> Texto
+        </button>
+        <button id="btnModo" class="btn-option">
+          <i class="far fa-lightbulb"></i> Modo oscuro
+        </button>
+      </div>
+    </header>
+    <main>
+      <!--GENERADOR-->
+      <div class="generator">
+        <p id="top-text">TOP TEXT</p>
+        <img src="" id="meme-url" />
+        <p id="bottom-text">BOTTOM TEXT</p>
+      </div>
+      <!--DOWNLOAD BOTTOM-->
+      <button id="btnDescarga" class="btn-download" type="button">
+        <i class="fas fa-download"></i> Descargar meme
+      </button>
     </main>
     <!--SIDEBARS-->
-    <aside class="sidebar">
+    <aside id="panel">
       <button class="close-panel" id="close-panel">
         <i class="far fa-window-close"></i>
       </button>
       <br /><br />
-      <h3>IMAGEN</h3>
-      <div class="img-configs">
-        <h4>URL</h4>
-        <input type="url" />
-        <h4>FONDO</h4>
-
-        <h4>FILTROS</h4>
-      </div>
+      <!--SIDEBAR IMAGENES-->
+      <section class="sidebar" id="sidebar1">
+        <h3>IMAGEN</h3>
+       <div class="configs">
+			<div class="divwidth">
+          <h4>URL</h4>
+          <input oninput="urlImg" id="url-img" class="sidebar-input" type="text" />
+			</div>
+			<div class="divwidth">
+          <h4>FONDO</h4>
+      <div class="divrow">
+            <input class="sidebar-input m-right-li" type="color" value="#ff0000" id="fondo-img" />
+            <select
+              id="input-font"
+              class="sidebar-input"
+              onchange="changeFontStyle (this);"
+            >
+              <option value="Ninguno" selected="selected">Ninguno</option>
+              <option value="Aclarar">Aclarar</option>
+              <option value="Oscurecer">Oscurecer</option>
+              <option value="Diferencia">Diferencia</option>
+              <option value="Luminosidad">Luminosidad</option>
+              <option value="Multiplicar">Multiplicar</option>
+            </select>
+          </div>
+				</div>
+			</div>
+          <h4>FILTROS</h4>
+          <div class="filtersAll">
+          <div class="barra">
+            <p>BRILLO</p>
+            <input
+              id="brillo"
+              class="img-barra-config"
+              type="range"
+              min="0"
+              max="1"
+              value="0.5"
+              step="0.1"
+            />
+          </div>
+          <div class="barra">
+            <p>OPACIDAD</p>
+            <input
+              id="opacidad"
+              class="img-barra-config"
+              type="range"
+              min="0"
+              max="1"
+              value="0.5"
+              step="0.1"
+            />
+          </div>
+          <div class="barra">
+            <p>CONTRASTE</p>
+            <input
+              id="contraste"
+              class="img-barra-config"
+              type="range"
+              min="100"
+              max="1000"
+              value="100"
+              step="1"
+            />
+          </div>
+          <div class="barra">
+            <p>DESENFOQUE</p>
+            <input
+              id="desenfoque"
+              class="img-barra-config"
+              type="range"
+              min="0"
+              max="10"
+              value="0"
+              step="0.1"
+            />
+          </div>
+          <div class="barra">
+            <p>ESCALA DE GRISES</p>
+            <input
+              id="grises"
+              class="img-barra-config"
+              type="range"
+              min="0"
+              max="100"
+              value="0"
+              step="1"
+            />
+          </div>
+          <div class="barra">
+            <p>SEPIA</p>
+            <input
+              id="sepia"
+              class="img-barra-config"
+              type="range"
+              min="0"
+              max="100"
+              value="0"
+              step="1"
+            />
+          </div>
+          <div class="barra">
+            <p>HUE</p>
+            <input
+              id="hue"
+              class="img-barra-config"
+              type="range"
+              min="0"
+              max="359"
+              value="0"
+              step="1"
+            />
+          </div>
+          <div class="barra">
+            <p>SATURADO</p>
+            <input
+              id="saturado"
+              class="img-barra-config"
+              type="range"
+              min="100"
+              max="1000"
+              value="100"
+              step="10"
+            />
+          </div>
+          <div class="barra">
+            <p>NEGATIVO</p>
+            <input
+              id="negativo"
+              class="img-barra-config"
+              type="range"
+              min="0"
+              max="1"
+              value="0"
+              step="0.1"
+            />
+          </div>
+          </div>
+        </div>
+        <div class="divcol">
+        <button id="resetFilter" class="btn-option" type="reset">
+          Reestablecer filtros
+        </button>
+        </div>
+      </section>
+      <!--SIDEBAR TEXTO-->
+      <section class="sidebar" id="sidebar2">
+        <br /><br />
+        <h3>TEXTO</h3>
+        <div class="configs">
+          <h4>SUPERIOR</h4>
+          <input id="sup-text" class="sidebar-input" type="text" />
+          <input id="sup-check" type="checkbox" />Sin texto superior
+          <h4>INFERIOR</h4>
+          <input id="inf-text" class="sidebar-input" type="text" />
+          <input id="inf-check" type="checkbox" />Sin texto inferior
+          <!--FONT STYLE-->
+          <h4>FUENTE</h4>
+          <select
+            id="input-font"
+            class="sidebar-input"
+            onchange="changeFontStyle (this);"
+          >
+            <option value="Impact" selected="selected">Impact</option>
+            <option value="Arial">Arial</option>
+            <option value="Arial Black">Arial Black</option>
+            <option value="American Typewritter">American Typewritter</option>
+            <option value="Andale Mono">Andale Mono</option>
+            <option value="Comic Sans MS">Comic Sans MS</option>
+            <option value="Helvetica">Helvetica</option>
+            <option value="Impact">Impact</option>
+            <option value="Verdana">Verdana</option>
+            <option value="Times New Roman">Times New Roman</option>
+          </select>
+          <div class="divrow">
+            <!--FONT SIZE-->
+            <input
+              class="sidebar-input"
+              type="number"
+              min="12"
+              id="text-size"
+              value="40"
+            />
+            <div class="divrow">
+              <button class="sidebar-input">
+                <i class="fas fa-align-left"></i>
+              </button>
+              <button class="sidebar-input">
+                <i class="fas fa-align-center"></i>
+              </button>
+              <button class="sidebar-input">
+                <i class="fas fa-align-right"></i>
+              </button>
+            </div>
+          </div>
+          <div class="divrow" style="justify-content: center">
+            <div class="divcol">
+              <h4>COLOR</h4>
+              <input type="color" value="#ff0000" id="text-color" />
+            </div>
+            <div class="divcol">
+              <h4>FONDO</h4>
+              <input type="color" value="#ff0000" id="fondo-color" />
+            </div>
+          </div>
+          <br />
+          <input class="sidebar-input" id="fondo-check" type="checkbox" />Fondo
+          transparente
+          <h4>CONTORNO</h4>
+          <div class="divrow">
+            <button class="sidebar-input">Ninguno</button>
+            <button class="sidebar-input">Claro</button>
+            <button class="sidebar-input">Oscuro</button>
+          </div>
+          <h4>ESPACIADO</h4>
+          <input
+            class="sidebar-input"
+            type="number"
+            id="espaciado"
+            min="10"
+            max="50"
+            value="35"
+          />
+          <h4>INTERLINEADO</h4>
+          <select
+            id="interlineado"
+            class="sidebar-input"
+            onchange=" (this);"
+            value="17"
+            range
+          >
+            <option value="0.8">0.8</option>
+            <option value="1">1</option>
+            <option value="1.2" selected="selected">1.2</option>
+            <option value="1.5">1.5</option>
+            <option value="2">2</option>
+          </select>
+        </div>
+      </section>
     </aside>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"
+      integrity="sha512-01CJ9/g7e8cUmY0DFTMcUw/ikS799FHiOA0eyHsUWfOetgbx/t6oV4otQ5zXKQyIrQGTHSmRVPIgrgLcZi/WMA=="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"
+      integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ=="
+      crossorigin="anonymous"
+    ></script>
+    <script src="./app.js"></script>
   </body>
 </html>
