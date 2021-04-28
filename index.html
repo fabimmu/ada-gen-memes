@@ -32,7 +32,7 @@
       <!--GENERADOR-->
       <div class="generator">
         <p id="top-text">TOP TEXT</p>
-        <img src="" id="meme-url" />
+        <img src="" id="meme-url"/>
         <p id="bottom-text">BOTTOM TEXT</p>
       </div>
       <!--DOWNLOAD BOTTOM-->
@@ -48,8 +48,8 @@
       <br /><br />
       <!--SIDEBAR IMAGENES-->
       <section class="sidebar" id="sidebar1">
-        <h3>IMAGEN</h3>
-       <div class="configs">
+        <div class="divwidth">
+        <h3>IMAGEN</h3></div>
 			<div class="divwidth">
           <h4>URL</h4>
           <input oninput="urlImg" id="url-img" class="sidebar-input" type="text" />
@@ -189,19 +189,21 @@
         <button id="resetFilter" class="btn-option" type="reset">
           Reestablecer filtros
         </button>
-        </div>
+       
       </section>
       <!--SIDEBAR TEXTO-->
       <section class="sidebar" id="sidebar2">
-        <br /><br />
-        <div class="configs">
-        <h3>TEXTO</h3>
+        <div class="divwidth">
+        <h3>TEXTO</h3></div>
           <h4>SUPERIOR</h4>
           <input id="sup-text" class="sidebar-input" type="text" />
-          <input id="sup-check" type="checkbox" />Sin texto superior
+          <label>
+          <input id="sup-check" type="checkbox"/>
+          Sin texto superior</label>
           <h4>INFERIOR</h4>
           <input id="inf-text" class="sidebar-input" type="text" />
-          <input id="inf-check" type="checkbox" />Sin texto inferior
+          <label>
+          <input id="inf-check" type="checkbox" /> Sin texto inferior</label>
           <!--FONT STYLE-->
           <h4>FUENTE</h4>
           <select
@@ -257,7 +259,7 @@
           <input class="sidebar-input" id="fondo-check" type="checkbox" />Fondo
           transparente
           <h4>CONTORNO</h4>
-          <div class="divrow">
+          <div class="divrow" >
             <button id="strokeNone" class="sidebar-input">Ninguno</button>
             <button id="strokeLight" class="sidebar-input">Claro</button>
             <button id="strokeDark" class="sidebar-input">Oscuro</button>
@@ -284,7 +286,7 @@
             <option value="1.5">1.5</option>
             <option value="2">2</option>
           </select>
-        </div>
+        
       </section>
     </aside>
     <script

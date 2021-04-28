@@ -122,7 +122,7 @@ inTxtInf.addEventListener("input", () => {
 });
 const SupCheck = document.getElementById("sup-check");
 const InfCheck = document.getElementById("inf-check");
-SupCheck.addEventListener("input", () => {
+SupCheck.addEventListener("click", () => {
   if (SupCheck.checked) {
     inTxtSup.disabled = true;
     TxtSup.textContent = "";
@@ -130,7 +130,7 @@ SupCheck.addEventListener("input", () => {
     inTxtSup.disabled = false;
   }
 });
-InfCheck.addEventListener("input", () => {
+InfCheck.addEventListener("click", () => {
   if (InfCheck.checked) {
     inTxtInf.disabled = true;
     TxtInf.textContent = "";
