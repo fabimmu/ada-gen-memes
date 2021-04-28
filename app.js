@@ -151,24 +151,59 @@ changeFontSize.addEventListener("input", () => {
   TxtInf.style.fontSize = `${changeFontSize.value}px`;
 });
 //POSICION TEXTO (NO FUNCIONA)
-const btnPosL = document.querySelector("btn-text-left");
+const btnPosL = document.getElementById("btn-text-left");
 btnPosL.addEventListener("click", () => {
   TxtSup.style.textAlign = `left`;
   TxtInf.style.textAlign = `left`;
 });
-const btnPosC = document.querySelector("btn-text-center");
+const btnPosC = document.getElementById("btn-text-center");
 btnPosC.addEventListener("click", () => {
   TxtSup.style.textAlign = "center";
   TxtInf.style.textAlign = "center";
 });
-const btnPosR = document.querySelector("btn-text-right");
+const btnPosR = document.getElementById("btn-text-right");
 btnPosR.addEventListener("click", () => {
   TxtSup.style.textAlign = "right";
   TxtInf.style.textAlign = "right";
 });
 //COLOR Y FONDO
 const fontColor = document.getElementById("text-color");
-fontColor.addEventListener("input", () => {
+fontColor.addEventListener("change", () => {
   TxtSup.style.color = fontColor.value;
   TxtInf.style.color = fontColor.value;
+});
+const backfontColor = document.getElementById("fondo-color");
+backfontColor.addEventListener("change", () => {
+  TxtSup.style.backgroundColor = backfontColor.value;
+  TxtInf.style.backgroundColor = backfontColor.value;
+});
+//CONTORNO TEXTO
+const strokeNull = document.getElementById("strokeNone");
+const strokeL = document.getElementById("strokeLight");
+const strokeD = document.getElementById("strokeDark");
+strokeNull.addEventListener("click", () => {
+  TxtSup.classList.remove("texto-borde-light");
+  TxtInf.classList.remove("texto-borde-light");
+  TxtSup.classList.remove("texto-borde-dark");
+  TxtInf.classList.remove("texto-borde-dark");
+});
+strokeL.addEventListener("click", () => {
+  TxtSup.classList.add("texto-borde-light");
+  TxtInf.classList.add("texto-borde-light");
+});
+strokeD.addEventListener("click", () => {
+  TxtSup.classList.add("texto-borde-dark");
+  TxtInf.classList.add("texto-borde-dark");
+});
+//Espaciado
+const espaciadoTxt = document.getElementById("espaciado");
+espaciadoTxt.addEventListener("input", () => {
+  TxtSup.style.padding = `${espaciadoTxt.value}px`;
+  TxtInf.style.padding = `${espaciadoTxt.value}px`;
+});
+//Interlineado
+const interlineadoTxt = document.getElementById("interlineado");
+interlineadoTxt.addEventListener("input", () => {
+  TxtSup.style.lineHeight = `${interlineadoTxt}`;
+  TxtInf.style.lineHeight = `${interlineadoTxt}`;
 });

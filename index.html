@@ -253,14 +253,14 @@
               <input type="color" value="#000000" id="fondo-color" />
             </div>
           </div>
-          <br />
+          <br/>
           <input class="sidebar-input" id="fondo-check" type="checkbox" />Fondo
           transparente
           <h4>CONTORNO</h4>
           <div class="divrow">
-            <button class="sidebar-input">Ninguno</button>
-            <button class="sidebar-input">Claro</button>
-            <button class="sidebar-input">Oscuro</button>
+            <button id="strokeNone" class="sidebar-input">Ninguno</button>
+            <button id="strokeLight" class="sidebar-input">Claro</button>
+            <button id="strokeDark" class="sidebar-input">Oscuro</button>
           </div>
           <h4>ESPACIADO</h4>
           <input
@@ -275,7 +275,6 @@
           <select
             id="interlineado"
             class="sidebar-input"
-            onchange=" (this);"
             value="17"
             range
           >
