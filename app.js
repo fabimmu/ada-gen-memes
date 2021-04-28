@@ -32,6 +32,13 @@ const bClose = document.querySelector("#close-panel");
 bClose.addEventListener("click", () => {
   panel.classList.add("ocultar");
 });
+/*BOTON DESCARGA*/
+let descarga = document.getElementById("btnDescarga");
+descarga.addEventListener("click", () => {
+  domtoimage.toBlob(document.querySelector(".gen-box")).then(function (blob) {
+    window.saveAs(blob, "my-node.png");
+  });
+});
 /*********************IMAGEN************************* */
 //Llamado de IMG con el input URL
 
@@ -41,13 +48,23 @@ let memeImg = document.getElementById("meme-url"); /*img*/
 urlImg.addEventListener("input", function () {
   memeImg.src = this.value;
 });
-/*BOTON DESCARGA*/
-let descarga = document.getElementById("btnDescarga");
-descarga.addEventListener("click", () => {
-  domtoimage.toBlob(document.querySelector(".gen-box")).then(function (blob) {
-    window.saveAs(blob, "my-node.png");
-  });
+//FONDO de la IMG
+const cFondo = document.getElementById("fondo-img");
+cFondo.addEventListener("input", () => {
+  let color = cFondo.value;
+  memeImg.style.backgroundColor = color;
 });
+/*
+var updateMode = function (blendType) {
+  memeImg.classList.add("blen-options");
+  document.getElementById("input-blend").style.backgroundBlendMode =
+    blendType.value;
+};
+const updateMode = () => {
+  memeImg.style.backgroundBlendMode = blendType.value;
+};
+const blendType = document.getElementById("input-blend");
+blendType.addEventListener("change", updateMode);*/
 
 //BARRAS DE FILTROS
 const updateFiltro = () => {
@@ -74,7 +91,7 @@ const saturado = document.querySelector("#saturado");
 saturado.addEventListener("change", updateFiltro);
 const negativo = document.querySelector("#negativo");
 negativo.addEventListener("change", updateFiltro);
-
+/*RESET IMG FILTER*/
 const bReset = document.querySelector("#resetFilter");
 const resetFiltro = () => {
   brillo.value = 1;
@@ -91,6 +108,67 @@ const resetFiltro = () => {
 bReset.addEventListener("click", resetFiltro);
 
 /*Font Configurations*/
-var changeFontStyle = function (font) {
-  document.getElementById("output-text").style.fontFamily = font.value;
-};
+//TEXTOS
+const inTxtSup = document.getElementById("sup-text");
+const inTxtInf = document.getElementById("inf-text");
+const TxtSup = document.getElementById("top-text");
+const TxtInf = document.getElementById("bottom-text");
+
+inTxtSup.addEventListener("input", () => {
+  TxtSup.innerHTML = inTxtSup.value;
+});
+inTxtInf.addEventListener("input", () => {
+  TxtInf.innerHTML = inTxtInf.value;
+});
+const SupCheck = document.getElementById("sup-check");
+const InfCheck = document.getElementById("inf-check");
+SupCheck.addEventListener("input", () => {
+  if (SupCheck.checked) {
+    inTxtSup.disabled = true;
+    TxtSup.textContent = "";
+  } else {
+    inTxtSup.disabled = false;
+  }
+});
+InfCheck.addEventListener("input", () => {
+  if (InfCheck.checked) {
+    inTxtInf.disabled = true;
+    TxtInf.textContent = "";
+  } else {
+    inTxtInf.disabled = false;
+  }
+});
+//FUENTES
+const changeFontFam = document.getElementById("input-font");
+changeFontFam.addEventListener("input", () => {
+  TxtSup.style.fontFamily = changeFontFam.value;
+  TxtInf.style.fontFamily = changeFontFam.value;
+});
+//TAMANIO FUENTE
+const changeFontSize = document.getElementById("font-size");
+changeFontSize.addEventListener("input", () => {
+  TxtSup.style.fontSize = `${changeFontSize.value}px`;
+  TxtInf.style.fontSize = `${changeFontSize.value}px`;
+});
+//POSICION TEXTO (NO FUNCIONA)
+const btnPosL = document.querySelector("btn-text-left");
+btnPosL.addEventListener("click", () => {
+  TxtSup.style.textAlign = `left`;
+  TxtInf.style.textAlign = `left`;
+});
+const btnPosC = document.querySelector("btn-text-center");
+btnPosC.addEventListener("click", () => {
+  TxtSup.style.textAlign = "center";
+  TxtInf.style.textAlign = "center";
+});
+const btnPosR = document.querySelector("btn-text-right");
+btnPosR.addEventListener("click", () => {
+  TxtSup.style.textAlign = "right";
+  TxtInf.style.textAlign = "right";
+});
+//COLOR Y FONDO
+const fontColor = document.getElementById("text-color");
+fontColor.addEventListener("input", () => {
+  TxtSup.style.color = fontColor.value;
+  TxtInf.style.color = fontColor.value;
+});

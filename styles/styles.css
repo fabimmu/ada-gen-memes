@@ -91,7 +91,10 @@ main {
   height: 350px;
   background-color: black;
   position: relative;
-}
+} /*
+.blen-options {
+  background-blend-mode: none;
+}*/
 .btn-download {
   font-weight: 100;
   color: white;
@@ -104,6 +107,20 @@ main {
 }
 .btn-download:hover {
   background-color: #347a37ec;
+}
+/*DIVS*/
+.divwidth {
+  width: 100%;
+}
+.divrow {
+  display: flex;
+  flex-direction: row;
+}
+.divcol {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 /*SIDEBAR PANEL*/
 #panel {
@@ -121,20 +138,6 @@ main {
   align-items: flex-start;
   padding: 10px;
   width: 100%;
-}
-/*DIVS*/
-.divwidth {
-  width: 100%;
-}
-.divrow {
-  display: flex;
-  flex-direction: row;
-}
-.divcol {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 .ocultar {
   display: none;
