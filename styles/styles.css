@@ -80,22 +80,27 @@ main {
   width: 100%;
   max-width: 610px;
   height: 610px;
-  text-align: center;
+  background-color: black;
+  position: relative;
 }
 #top-text,
 #bottom-text {
+  width: 100%;
   background-color: white;
   font-size: 40px;
   font-weight: 400;
   text-align: center;
   padding: 35px 50px;
   cursor: text;
+  word-wrap: break-word;
 }
 #meme-url {
   width: 100%;
-  height: 350px;
-  background-color: black;
-  position: relative;
+  height: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  flex-grow: 1;
 } /*
 .blen-options {
   background-blend-mode: none;
@@ -136,6 +141,8 @@ main {
   color: var(--color-text);
   background-color: var(--color-panel);
   padding: 10px 15px;
+  height: 100%;
+  width: 270px;
 }
 .sidebar {
   display: flex;
@@ -175,6 +182,7 @@ input[type="text"],
 [type="number"] {
   border: none;
   outline: none;
+  word-wrap: break-word;
 }
 .filtersAll {
   width: 100%;

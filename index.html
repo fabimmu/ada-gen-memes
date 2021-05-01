@@ -30,9 +30,9 @@
     </header>
     <main class="divcol ">
       <!--GENERADOR-->
-      <div class="generator">
+      <div class="generator divcol">
         <p id="top-text">TOP TEXT</p>
-        <img src="" id="meme-url"/>
+        <div id="meme-url"/></div>
         <p id="bottom-text">BOTTOM TEXT</p>
       </div>
       <!--DOWNLOAD BOTTOM-->
@@ -52,7 +52,7 @@
         <h3>IMAGEN</h3></div>
 			<div class="divwidth">
           <h4>URL</h4>
-          <input oninput="urlImg" id="url-img" class="sidebar-input" type="text" />
+          <input id="url-img" class="sidebar-input" type="text" />
 			</div>
 			<div class="divwidth">
           <h4>FONDO</h4>
@@ -192,16 +192,16 @@
        
       </section>
       <!--SIDEBAR TEXTO-->
-      <section class="sidebar" id="sidebar2">
+      <section class="sidebar ocultar" id="sidebar2">
         <div class="divwidth">
         <h3>TEXTO</h3></div>
           <h4>SUPERIOR</h4>
-          <input id="sup-text" class="sidebar-input" type="text" />
+          <textarea id="sup-text" class="sidebar-input" type="text" cols="40" rows="1"></textarea>
           <label>
           <input id="sup-check" type="checkbox"/>
           Sin texto superior</label>
           <h4>INFERIOR</h4>
-          <input id="inf-text" class="sidebar-input" type="text" />
+           <textarea id="inf-text" class="sidebar-input" type="text" rows="1" cols="40" ></textarea>
           <label>
           <input id="inf-check" type="checkbox" /> Sin texto inferior</label>
           <!--FONT STYLE-->
@@ -256,8 +256,8 @@
             </div>
           </div>
           <br/>
-          <input class="sidebar-input" id="fondo-check" type="checkbox" />Fondo
-          transparente
+          <label class="divrow"><input class="sidebar-input" id="fondo-check" type="checkbox" />Fondo
+          transparente</label>
           <h4>CONTORNO</h4>
           <div class="divrow" >
             <button id="strokeNone" class="sidebar-input">Ninguno</button>
@@ -277,8 +277,6 @@
           <select
             id="interlineado"
             class="sidebar-input"
-            value="17"
-            range
           >
             <option value="0.8">0.8</option>
             <option value="1">1</option>

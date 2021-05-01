@@ -45,27 +45,22 @@ descarga.addEventListener("click", () => {
 let urlImg = document.getElementById("url-img"); /*input*/
 let memeImg = document.getElementById("meme-url"); /*img*/
 
-urlImg.addEventListener("input", function () {
-  memeImg.src = this.value;
+urlImg.addEventListener("input", () => {
+  const url = urlImg.value;
+  memeImg.style.backgroundImage = `url(${url})`;
 });
+
 //FONDO de la IMG
 const cFondo = document.getElementById("fondo-img");
 cFondo.addEventListener("input", () => {
   let color = cFondo.value;
   memeImg.style.backgroundColor = color;
 });
-/*
-var updateMode = function (blendType) {
-  memeImg.classList.add("blen-options");
-  document.getElementById("input-blend").style.backgroundBlendMode =
-    blendType.value;
-};
-const updateMode = () => {
-  memeImg.style.backgroundBlendMode = blendType.value;
-};
+//Blend Mode
 const blendType = document.getElementById("input-blend");
-blendType.addEventListener("change", updateMode);*/
-
+blendType.addEventListener("change", () => {
+  memeImg.style.backgroundBlendMode = blendType.value;
+});
 //BARRAS DE FILTROS
 const updateFiltro = () => {
   memeImg.style.filter = `brightness(${brillo.value}) 
@@ -126,16 +121,20 @@ SupCheck.addEventListener("click", () => {
   if (SupCheck.checked) {
     inTxtSup.disabled = true;
     TxtSup.textContent = "";
+    TxtSup.classList.add("ocultar");
   } else {
     inTxtSup.disabled = false;
+    TxtSup.classList.remove("ocultar");
   }
 });
 InfCheck.addEventListener("click", () => {
   if (InfCheck.checked) {
     inTxtInf.disabled = true;
     TxtInf.textContent = "";
+    TxtInf.classList.add("ocultar");
   } else {
     inTxtInf.disabled = false;
+    TxtInf.classList.remove("ocultar");
   }
 });
 //FUENTES
@@ -177,6 +176,18 @@ backfontColor.addEventListener("change", () => {
   TxtSup.style.backgroundColor = backfontColor.value;
   TxtInf.style.backgroundColor = backfontColor.value;
 });
+const checkFondo = document.getElementById("fondo-check");
+checkFondo.addEventListener("click", () => {
+  if (checkFondo.checked) {
+    TxtSup.style.backgroundColor = "transparent";
+    TxtInf.style.backgroundColor = "transparent";
+    memeImg.style.backgroundImageSize = "extend";
+  } else {
+    TxtSup.style.backgroundColor = backfontColor.value;
+    TxtInf.style.backgroundColor = backfontColor.value;
+  }
+});
+
 //CONTORNO TEXTO
 const strokeNull = document.getElementById("strokeNone");
 const strokeL = document.getElementById("strokeLight");
@@ -204,6 +215,6 @@ espaciadoTxt.addEventListener("input", () => {
 //Interlineado
 const interlineadoTxt = document.getElementById("interlineado");
 interlineadoTxt.addEventListener("input", () => {
-  TxtSup.style.lineHeight = `${interlineadoTxt}`;
-  TxtInf.style.lineHeight = `${interlineadoTxt}`;
+  TxtSup.style.lineHeight = interlineadoTxt.value;
+  TxtInf.style.lineHeight = interlineadoTxt.value;
 });
