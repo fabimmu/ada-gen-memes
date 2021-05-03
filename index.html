@@ -185,23 +185,23 @@
           </div>
           </div>
         </div>
-        <div class="divcol">
+        <div class="divcol-center m-top-lil">
         <button id="resetFilter" class="btn-option" type="reset">
           Reestablecer filtros
         </button>
-       
+        </div>
       </section>
       <!--SIDEBAR TEXTO-->
       <section class="sidebar ocultar" id="sidebar2">
         <div class="divwidth">
         <h3>TEXTO</h3></div>
           <h4>SUPERIOR</h4>
-          <textarea id="sup-text" class="sidebar-input" type="text" cols="40" rows="1"></textarea>
+          <textarea id="sup-text" class="sidebar-input" type="text" cols="40" rows="2"></textarea>
           <label>
           <input id="sup-check" type="checkbox"/>
           Sin texto superior</label>
           <h4>INFERIOR</h4>
-           <textarea id="inf-text" class="sidebar-input" type="text" rows="1" cols="40" ></textarea>
+           <textarea id="inf-text" class="sidebar-input" type="text" rows="2" cols="40" ></textarea>
           <label>
           <input id="inf-check" type="checkbox" /> Sin texto inferior</label>
           <!--FONT STYLE-->
@@ -225,7 +225,7 @@
           <div class="divrow">
             <!--FONT SIZE-->
             <input
-              class="sidebar-input"
+              class="sidebar-input m-right-li"
               type="number"
               min="12"
               id="font-size"
@@ -234,10 +234,10 @@
 
             />
             <div class="divrow">
-              <button id="btn-text-left" type="button" class="sidebar-input">
+              <button id="btn-text-left" type="button" class="sidebar-input m-right-li">
                 <i class="fas fa-align-left"></i>
               </button>
-              <button id="btn-text-center" type="button" class="sidebar-input">
+              <button id="btn-text-center" type="button" class="sidebar-input m-right-li">
                 <i class="fas fa-align-center"></i>
               </button>
               <button id="btn-text-right" type="button" class="sidebar-input">
@@ -245,23 +245,23 @@
               </button>
             </div>
           </div>
-          <div class="divrow" style="justify-content: center">
-            <div class="divcol">
+          <div class="divrow divwidth">
+            <div class="divcol-center m-right-li">
               <h4>COLOR</h4>
-              <input type="color" value="#000000" id="text-color" />
+              <input type="color" value="#000000" id="text-color" class="divwidth"/>
             </div>
-            <div class="divcol">
+            <div class="divcol-center">
               <h4>FONDO</h4>
-              <input type="color" value="#000000" id="fondo-color" />
+              <input type="color" value="#000000" id="fondo-color" class="divwidth"/>
             </div>
           </div>
           <br/>
-          <label class="divrow"><input class="sidebar-input" id="fondo-check" type="checkbox" />Fondo
+          <label class="divrow divwidth"><input class="sidebar-input" id="fondo-check" type="checkbox" />Fondo
           transparente</label>
           <h4>CONTORNO</h4>
-          <div class="divrow" >
-            <button id="strokeNone" class="sidebar-input">Ninguno</button>
-            <button id="strokeLight" class="sidebar-input">Claro</button>
+          <div class="divrow divwidth" >
+            <button id="strokeNone" class="sidebar-input m-right-li">Ninguno</button>
+            <button id="strokeLight" class="sidebar-input m-right-li">Claro</button>
             <button id="strokeDark" class="sidebar-input">Oscuro</button>
           </div>
           <h4>ESPACIADO</h4>

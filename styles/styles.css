@@ -6,6 +6,9 @@
 .m-right-li {
   margin-right: 10px;
 }
+.m-top-lil {
+  margin-top: 20px;
+}
 .fondo-width {
   width: 100%;
 }
@@ -15,10 +18,12 @@ body.light {
   --color-background: #e3f7f8;
   --color-panel: #e7e6e1;
   --color-boton-default: #dfdfdf;
-  --color-boton-default-hover: #e3f7f8;
+  --color-boton-default-hover: #cacaca;
   --color-text: rgb(93, 93, 93);
   --font-primary: "Open Sans", sans-serif;
   --border-radius: 3px;
+  --color-close-btn: #e7e6e1;
+  --sidebar-input-color: #cacaca;
 }
 /*DARK MODE*/
 body.dark {
@@ -28,8 +33,11 @@ body.dark {
   --color-boton-default: #151515;
   --color-boton-default-hover: #e3f7f8;
   --color-text: white;
+  --color-text-hover-btn: #151515;
   --font-primary: "Open Sans", sans-serif;
   --border-radius: 3px;
+  --color-close-btn: #252935;
+  --sidebar-input-color: #e3f7f8;
 }
 button {
   outline: 0;
@@ -57,12 +65,17 @@ h3 {
 }
 .btn-option:hover {
   background-color: var(--color-boton-default-hover);
+  color: var(--color-text-hover-btn);
   padding: 15px;
   border-radius: 5px;
 }
 .btn-option .fas,
+.far:hover {
+  color: var(--color-text-hover-btn);
+}
+.btn-option .fas,
 .far {
-  color: white;
+  color: var(--color-text);
 }
 /*MAIN BOX*/
 body {
@@ -97,7 +110,7 @@ main {
 #meme-url {
   width: 100%;
   height: 100%;
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   flex-grow: 1;
@@ -126,11 +139,23 @@ main {
   display: flex;
   flex-direction: row;
 }
+.divrow-space {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 .divcol {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+.divcol-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 /*SIDEBAR PANEL*/
 #panel {
@@ -150,12 +175,13 @@ main {
   justify-content: flex-start;
   align-items: flex-start;
   overflow: auto;
+  height: 100%;
 }
 .ocultar {
   display: none;
 }
 .close-panel {
-  background-color: #e7e6e1;
+  background-color: var(--color-close-btn);
   border: none;
   font-size: 2em;
   text-align: left;
@@ -171,7 +197,7 @@ main {
 .sidebar-input {
   width: 100%;
   height: auto;
-  background-color: #cacaca;
+  background-color: var(--sidebar-input-color);
   border-radius: 5px;
   border: none;
   transition: background-color 0.2s;

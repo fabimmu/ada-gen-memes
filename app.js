@@ -125,6 +125,7 @@ SupCheck.addEventListener("click", () => {
   } else {
     inTxtSup.disabled = false;
     TxtSup.classList.remove("ocultar");
+    TxtSup.textContent = inTxtSup.value;
   }
 });
 InfCheck.addEventListener("click", () => {
@@ -135,6 +136,7 @@ InfCheck.addEventListener("click", () => {
   } else {
     inTxtInf.disabled = false;
     TxtInf.classList.remove("ocultar");
+    TxtInf.textContent = inTxtInf.value;
   }
 });
 //FUENTES
