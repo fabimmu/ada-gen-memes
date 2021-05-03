@@ -159,6 +159,8 @@ main {
 }
 /*SIDEBAR PANEL*/
 #panel {
+  overflow: auto;
+
   position: fixed;
   right: 0;
   top: 0;
@@ -174,7 +176,6 @@ main {
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  overflow: auto;
   height: 100%;
 }
 .ocultar {
