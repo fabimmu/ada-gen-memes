@@ -35,7 +35,7 @@ bClose.addEventListener("click", () => {
 /*BOTON DESCARGA*/
 let descarga = document.getElementById("btnDescarga");
 descarga.addEventListener("click", () => {
-  domtoimage.toBlob(document.querySelector(".gen-box")).then(function (blob) {
+  domtoimage.toBlob(document.querySelector(".generator")).then(function (blob) {
     window.saveAs(blob, "my-node.png");
   });
 });
@@ -52,10 +52,13 @@ urlImg.addEventListener("input", () => {
 
 //FONDO de la IMG
 const cFondo = document.getElementById("fondo-img");
-cFondo.addEventListener("input", () => {
-  let color = cFondo.value;
-  memeImg.style.backgroundColor = color;
+const cFondoSpan = document.getElementById("spancolor-fondo-img");
+
+cFondo.addEventListener("change", () => {
+  memeImg.style.backgroundColor = cFondo.value;
+  cFondoSpan.textContent = cFondo.value;
 });
+
 //Blend Mode
 const blendType = document.getElementById("input-blend");
 blendType.addEventListener("change", () => {
@@ -169,14 +172,20 @@ btnPosR.addEventListener("click", () => {
 });
 //COLOR Y FONDO
 const fontColor = document.getElementById("text-color");
+const fontColorSpan = document.getElementById("spancolor-texto");
+
 fontColor.addEventListener("change", () => {
   TxtSup.style.color = fontColor.value;
   TxtInf.style.color = fontColor.value;
+  fontColorSpan.textContent = fontColor.value;
 });
 const backfontColor = document.getElementById("fondo-color");
+const fontBackColorSpan = document.getElementById("spancolor-fondoTexto");
+
 backfontColor.addEventListener("change", () => {
   TxtSup.style.backgroundColor = backfontColor.value;
   TxtInf.style.backgroundColor = backfontColor.value;
+  fontBackColorSpan.textContent = backfontColor.value;
 });
 const checkFondo = document.getElementById("fondo-check");
 checkFondo.addEventListener("click", () => {
